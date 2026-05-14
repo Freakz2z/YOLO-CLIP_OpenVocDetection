@@ -60,6 +60,7 @@ Image → YOLO26m (candidate boxes) → CLIP ViT-L/14@336px (zero-shot classific
 |--------|:-------:|:------|
 | YOLO + CLIP (zero-shot, ViT-L/14@336px) | 0.665 | No training |
 | YOLO26m fine-tuned (56 epochs) | 0.678 | Trained on VOC |
+| **YOLO26m fine-tuned (100 epochs)** | **0.724** | Trained on VOC |
 | YOLO-World | 0.635 | Pre-trained |
 | Detic | 0.612 | Trained on COCO+LVIS |
 
