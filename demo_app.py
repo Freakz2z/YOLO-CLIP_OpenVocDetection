@@ -102,7 +102,7 @@ class Detector:
             with torch.no_grad():
                 feat = self.clip_model.encode_image(crop_tensor)
                 feat /= feat.norm(dim=-1, keepdim=True)
-                sim = (feat @ self._text_features.T).squeeze(0)
+                sim = (feat @ self._text_features.T).squeeze(0) * 100.0
                 probs = F.softmax(sim, dim=-1)
 
             clip_conf, cls_idx = probs.topk(1)
