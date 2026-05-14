@@ -25,6 +25,10 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 YOLO_WEIGHT = os.path.join(PROJECT_ROOT, "runs/detect/runs/voc_full/exp1/weights/best.pt")
 DEFAULT_IMAGE = os.path.join(PROJECT_ROOT, "examples/open_vocab_detection_result.jpg")
 
+# If fine-tuned weight doesn't exist, use pretrained yolov8m
+if not os.path.exists(YOLO_WEIGHT):
+    YOLO_WEIGHT = "yolov8m.pt"  # auto-download from Ultralytics HUB
+
 # ── VOC 20 类 ──────────────────────────────────────
 VOC_CLASSES = [
     "aeroplane", "bicycle", "bird", "boat", "bottle",

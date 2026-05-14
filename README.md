@@ -22,11 +22,7 @@ cd yolo-clip-openvocab
 # 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Download model weights (168MB)
-# The demo uses a YOLO26m model fine-tuned on VOC 2007
-# We'll upload weights to GitHub Releases — check the Releases page
-
-# 4. Run!
+# 3. Run! (YOLO and CLIP models auto-download on first run)
 python demo_app.py
 ```
 
@@ -43,6 +39,32 @@ python demo_app.py
 - `person, dog, cat, car, bicycle, chair` — everyday objects
 - `aeroplane, boat, train, bus` — vehicles
 - VOC 20 classes: aeroplane, bicycle, bird, boat, bottle, bus, car, cat, chair, cow, diningtable, dog, horse, motorbike, person, pottedplant, sheep, sofa, train, tvmonitor
+
+## ⚙️ Setup
+
+```bash
+git clone https://github.com/YOUR_USERNAME/yolo-clip-openvocab.git
+cd yolo-clip-openvocab
+pip install -r requirements.txt
+```
+
+**Download YOLO weights** (required):
+
+The demo uses YOLO26m fine-tuned on VOC 2007. You can either:
+
+**Option A: Use pretrained YOLO from Ultralytics** (recommended)
+```python
+# The app will auto-download yolov8m.pt on first run
+# No manual download needed
+```
+
+**Option B: Use our fine-tuned model** (~168MB)
+```bash
+# Download from HuggingFace or Ultralytics HUB
+# Place in runs/detect/runs/voc_full/exp1/weights/best.pt
+```
+
+The app works with any Ultralytics YOLO model (yolov8n/m/l/x, yolov10n/m/l, etc.).
 
 ## 🔬 How It Works
 
@@ -79,8 +101,10 @@ Image → YOLO26m (candidate boxes) → CLIP ViT-L/14@336px (zero-shot classific
 ## ⚙️ Requirements
 
 - Python 3.10+
-- CUDA-capable GPU (4GB+ VRAM recommended)
+- CUDA-capable GPU (4GB+ VRAM recommended, but CPU also works)
 - Windows / macOS / Linux
+
+> **Note:** The app downloads CLIP models (~891MB for ViT-L/14@336px) on first run.
 
 ## 📄 License
 
