@@ -16,8 +16,8 @@ A lightweight desktop application for open-vocabulary object detection powered b
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/YOUR_USERNAME/yolo-clip-openvocab.git
-cd yolo-clip-openvocab
+git clone https://github.com/Freakz2z/YOLO-CLIP_OpenVocDetection.git
+cd YOLO-CLIP_OpenVocDetection
 
 # 2. Install dependencies
 pip install -r requirements.txt
